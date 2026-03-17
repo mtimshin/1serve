@@ -1,0 +1,56 @@
+.footer {
+  border-top: 1px solid rgba($color-white, 0.1);
+  padding: 4rem 0;
+  margin-top: 6rem;
+  background-color: $color-bg;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  &__nav {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    @media (max-width: 1024px) {
+      grid-column: span 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    a {
+      @include body-text;
+      color: rgba($color-white, 0.6);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__copy {
+    grid-column: span 1;
+    text-align: right;
+    @include body-text;
+    color: rgba($color-white, 0.4);
+
+    @media (max-width: 1024px) {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}

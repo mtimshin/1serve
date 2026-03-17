@@ -1,0 +1,38 @@
+@use 'sass:color';
+
+.landing {
+  text-align: center;
+  padding: 12rem 0;
+  
+  h1 {
+    @include h1;
+    font-size: 6.5rem;
+    margin-top: 0;
+  }
+  
+  p {
+    @include body-text;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.btn {
+  display: inline-block;
+  background-color: $color-primary;
+  color: $color-bg;
+  padding: 1.25rem 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba($color-primary, 0.3);
+    background-color: color.scale($color-primary, $lightness: 5%);
+  }
+}

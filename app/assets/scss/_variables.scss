@@ -1,0 +1,48 @@
+// Colors
+$color-bg: #111111;
+$color-primary: #D8FF2B;
+$color-white: #FFFFFF;
+
+// Typography
+$font-family: 'Inter', sans-serif;
+$font-family-condensed: 'Roboto Condensed', sans-serif;
+
+@mixin h1 {
+  font-family: $font-family-condensed;
+  font-size: 6.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: $color-primary; // H1 is Green
+  // margin-bottom: 2rem; // Removed per regulation
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+
+  @media (max-width: 1024px) {
+    font-size: 3.8rem;
+  }
+}
+
+@mixin h2 {
+  font-family: $font-family-condensed;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-white; // Base is white
+  margin-top: 3.5rem;
+  // margin-bottom: 1.25rem; // Removed per regulation
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin body-text {
+  font-family: $font-family;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba($color-white, 0.85);
+}
