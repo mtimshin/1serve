@@ -1,0 +1,59 @@
+// ============================================================
+// TABS — вкладки
+// ============================================================
+
+.tabs {
+  &__nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid rgba($color-white, 0.1);
+    margin-top: 32px;
+    overflow: visible; // No scrollbars at all
+    flex-wrap: wrap; 
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &__btn {
+    @include body-text;
+    background: none;
+    border: none;
+    color: rgba($color-white, 0.4);
+    cursor: pointer;
+    padding: 12px 24px;
+    position: relative;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $color-primary;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    &--active {
+      color: $color-primary;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:hover:not(&--active) {
+      color: rgba($color-white, 0.7);
+    }
+  }
+
+  &__panel {
+    margin-top: 32px;
+  }
+}

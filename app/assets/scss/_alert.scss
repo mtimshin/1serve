@@ -1,0 +1,62 @@
+// ============================================================
+// ALERT — уведомления / алерты
+// ============================================================
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 24px;
+  border-radius: 0;
+  margin-top: 24px;
+  border-left: 4px solid;
+  @include body-text;
+
+  &__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__close {
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.5;
+    padding: 0;
+    flex-shrink: 0;
+    transition: opacity 0.2s ease;
+
+    &:hover { opacity: 1; }
+  }
+
+  &--info {
+    background: rgba(#4A9EFF, 0.08);
+    border-color: #4A9EFF;
+    color: #4A9EFF;
+  }
+
+  &--success {
+    background: rgba(#4CAF50, 0.08);
+    border-color: #4CAF50;
+    color: #4CAF50;
+  }
+
+  &--warning {
+    background: rgba($color-primary, 0.08);
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+
+  &--error {
+    background: rgba(#FF4D4D, 0.08);
+    border-color: #FF4D4D;
+    color: #FF4D4D;
+  }
+
+  p {
+    margin-top: 0;
+    color: inherit;
+  }
+}

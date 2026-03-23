@@ -1,0 +1,64 @@
+// ============================================================
+// BADGE — теги, рубрики, статусы
+// ============================================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  padding: 4px 8px;
+
+  &--default {
+    background-color: rgba($color-white, 0.08);
+    color: rgba($color-white, 0.6);
+  }
+
+  &--primary {
+    background-color: rgba($color-primary, 0.15);
+    color: $color-primary;
+  }
+
+  &--live {
+    background-color: #FF4D4D;
+    color: $color-white;
+    animation: pulse-live 1.5s infinite;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $color-white;
+      animation: pulse-dot 1.5s infinite;
+    }
+  }
+
+  &--success {
+    background-color: rgba(#4CAF50, 0.15);
+    color: #4CAF50;
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: rgba($color-white, 0.6);
+    border: 1px solid rgba($color-white, 0.2);
+  }
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}

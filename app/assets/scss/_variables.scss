@@ -7,42 +7,79 @@ $color-white: #FFFFFF;
 $font-family: 'Inter', sans-serif;
 $font-family-condensed: 'Roboto Condensed', sans-serif;
 
+// Grid Scale
+$grid-column: 256px;
+$grid-gap: 48px;
+$grid-gap-mobile: 24px;
+$breakpoint-mobile: 1168px;
+$container-width: 1264px; // 4 * 256px + 3 * 48px + 2 * 48px padding
+
+// Pixel Scale: 1, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256
+
 @mixin h1 {
   font-family: $font-family-condensed;
-  font-size: 6.5rem;
+  font-size: 96px;
   font-weight: 800;
-  line-height: 1.1;
-  color: $color-primary; // H1 is Green
-  // margin-bottom: 2rem; // Removed per regulation
+  line-height: 96px;
+  color: $color-primary;
   margin-top: 0;
   text-transform: uppercase;
   letter-spacing: -0.04em;
 
-  @media (max-width: 1024px) {
-    font-size: 3.8rem;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 64px;
+    line-height: 64px;
   }
 }
 
 @mixin h2 {
   font-family: $font-family-condensed;
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
-  line-height: 1.2;
-  color: $color-white; // Base is white
-  margin-top: 3.5rem;
-  // margin-bottom: 1.25rem; // Removed per regulation
+  line-height: 48px;
+  color: $color-white;
+  margin-top: 48px;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 
-  @media (max-width: 1024px) {
-    font-size: 1.5rem;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
 @mixin body-text {
   font-family: $font-family;
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 28px;
   color: rgba($color-white, 0.85);
+}
+
+@mixin body-small {
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba($color-white, 0.65);
+}
+
+@mixin label {
+  font-family: $font-family;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $color-white;
+}
+
+@mixin label-small {
+  font-family: $font-family;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba($color-white, 0.5);
 }

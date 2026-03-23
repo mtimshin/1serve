@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'breadcrumbs';
+@import 'slider';
+@import 'landing';
+@import 'ui';
+@import 'search';
+@import 'article';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-bg;
+  font-family: $font-family;
+  color: rgba($color-white, 0.85);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  @include body-text;
+  margin-top: 24px;
+}
+
+ul, ol {
+  margin-top: 24px;
+  padding-left: 24px;
+  @include body-text;
+
+  li {
+    margin-top: 8px;
+  }
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h2; // Base h3 on h2 but maybe smaller if needed? Gravity says 3 sizes.
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h1, h2, h3 { a { color: inherit; } }
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.container {
+  max-width: 1264px; // 4 * 256px + 5 * 48px
+  margin: 0 auto;
+  padding: 0 48px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 24px;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color-primary, 0.7);
+}
+
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary $color-bg;
+}

@@ -1,10 +1,26 @@
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/1serve/'
+  },
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2025-07-15',
   css: ['~/assets/scss/main.scss'],
   devtools: { enabled: true },
   modules: [
     '@nuxt/content',
-    '@nuxt/image'
-  ]
+    '@nuxt/image',
+    'nuxt-studio'
+  ],
+  ssr: true,
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
+  studio: {
+    enabled: true,
+    git: {
+      provider: 'github'
+    }
+  }
 })

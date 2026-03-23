@@ -1,0 +1,119 @@
+// ============================================================
+// FORMS — поля ввода, чекбоксы, радио
+// ============================================================
+
+.form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-family: $font-family;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba($color-white, 0.5);
+  }
+
+  &__input,
+  &__textarea {
+    background: rgba($color-white, 0.04);
+    border: 1px solid rgba($color-white, 0.12);
+    border-radius: 0;
+    color: $color-white;
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 16px;
+    transition: border-color 0.2s ease;
+    width: 100%;
+
+    &::placeholder { color: rgba($color-white, 0.25); }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 128px;
+  }
+
+  &__row {
+    display: flex;
+    gap: 24px;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  // Checkbox & Radio
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba($color-white, 0.7);
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba($color-white, 0.2);
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      position: relative;
+
+      &:checked {
+        background-color: $color-primary;
+        border-color: $color-primary;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 2px;
+          left: 6px;
+          width: 5px;
+          height: 9px;
+          border: 2px solid $color-bg;
+          border-top: none;
+          border-left: none;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    input[type="radio"] {
+      border-radius: 50%;
+
+      &:checked::after {
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        border: none;
+        border-radius: 50%;
+        background: $color-bg;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

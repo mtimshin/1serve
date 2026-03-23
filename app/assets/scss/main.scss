@@ -8,6 +8,20 @@
 @import 'ui';
 @import 'search';
 @import 'article';
+// UI Kit
+@import 'button';
+@import 'badge';
+@import 'tabs';
+@import 'accordion';
+@import 'alert';
+@import 'modal';
+@import 'forms';
+@import 'skeleton';
+@import 'table';
+@import 'pagination';
+@import 'media-blocks';
+// Tennis components
+@import 'tennis';
 
 html {
   scroll-behavior: smooth;
@@ -22,9 +36,40 @@ html {
 body {
   background-color: $color-bg;
   font-family: $font-family;
-  @include body-text;
+  color: rgba($color-white, 0.85);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  @include body-text;
+  margin-top: 24px;
+
+  &.text-small {
+    @include body-small;
+  }
+}
+
+.label {
+  @include label;
+
+  &--small {
+    @include label-small;
+  }
+}
+
+ul, ol {
+  margin-top: 24px;
+  padding-left: 24px;
+  @include body-text;
+
+  li {
+    margin-top: 8px;
+
+    &::marker {
+      color: $color-primary;
+    }
+  }
 }
 
 h1 {
@@ -33,6 +78,12 @@ h1 {
 
 h2 {
   @include h2;
+}
+
+h3 {
+  @include h2; // Base h3 on h2 but maybe smaller if needed? Gravity says 3 sizes.
+  font-size: 24px;
+  line-height: 32px;
 }
 
 h1, h2, h3 { a { color: inherit; } }
@@ -48,11 +99,36 @@ a {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1264px; // 4 * 256px + 5 * 48px
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 48px;
 
-  @media (max-width: 1024px) {
-    padding: 0 1rem;
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 24px;
   }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color-primary, 0.7);
+}
+
+// Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary $color-bg;
 }

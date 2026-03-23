@@ -1,0 +1,65 @@
+// ============================================================
+// ACCORDION — спойлер / аккордеон
+// ============================================================
+
+.accordion {
+  margin-top: 24px;
+  border: 1px solid rgba($color-white, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__item {
+    border-bottom: 1px solid rgba($color-white, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-white;
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    transition: background 0.2s ease;
+    list-style: none; // Hide default marker
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background: rgba($color-white, 0.03);
+    }
+
+    &__icon {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      color: $color-primary;
+    }
+  }
+
+  &__item[open] &__trigger &__icon {
+    transform: rotate(180deg);
+  }
+
+  &__body {
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 0 24px 24px;
+    color: rgba($color-white, 0.7);
+    @include body-text;
+  }
+}

@@ -28,13 +28,13 @@ jobs:
         run: npm install
 
       - name: Static build
-        run: npm run generate || npm run build # Common static build commands for Nuxt/Vue
+        run: npm run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Assuming the static output is in 'dist' or '.output/public'
-          path: './dist' # Update this if your build output is different (e.g., .output/public for Nuxt)
+          # For Nuxt 3/4 static generation
+          path: './.output/public'
 
       - name: Deploy to GitHub Pages
         id: deployment

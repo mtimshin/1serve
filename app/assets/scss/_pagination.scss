@@ -1,0 +1,56 @@
+// ============================================================
+// PAGINATION
+// ============================================================
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+
+  &__btn {
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba($color-white, 0.1);
+    border-radius: 50%;
+    background: none;
+    color: rgba($color-white, 0.6);
+    font-family: $font-family-condensed; // Switched to condensed for numbers
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+
+    &:hover:not(&--active) {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    &--active {
+      background: $color-primary;
+      border-color: $color-primary;
+      color: $color-bg;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &--dots {
+      border: none;
+      cursor: default;
+      pointer-events: none;
+      color: rgba($color-white, 0.3);
+    }
+  }
+
+  &__show-more {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 48px;
+  }
+}

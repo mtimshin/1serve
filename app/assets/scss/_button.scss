@@ -1,0 +1,90 @@
+// ============================================================
+// BUTTON — все размеры и состояния
+// Использование: <UiButton variant="primary" size="md">Text</UiButton>
+// ============================================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: $font-family;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  // Sizes
+  &--sm {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 8px 16px;
+  }
+
+  &--md {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 24px;
+  }
+
+  &--lg {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 48px;
+  }
+
+  // Variants
+  &--primary {
+    background-color: $color-primary;
+    color: $color-bg;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid rgba($color-white, 0.2);
+
+    &:hover {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-bg;
+    }
+  }
+
+  &--danger {
+    background-color: transparent;
+    color: #FF4D4D;
+    border: 1px solid rgba(#FF4D4D, 0.4);
+
+    &:hover {
+      background-color: rgba(#FF4D4D, 0.1);
+      border-color: #FF4D4D;
+    }
+  }
+
+  // States
+  &:disabled,
+  &--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Icon on the right
+  svg {
+    flex-shrink: 0;
+  }
+}
