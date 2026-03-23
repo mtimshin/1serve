@@ -18,9 +18,11 @@ export default defineNuxtConfig({
     }
   },
   studio: {
-    enabled: true,
-    git: {
-      provider: 'github'
+    repository: {
+      provider: 'github',
+      owner: 'mtimshin',
+      repo: '1serve',
+      branch: 'master'
     }
   }
 })
