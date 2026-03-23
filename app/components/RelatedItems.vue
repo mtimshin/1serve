@@ -10,13 +10,10 @@
           class="related__card"
         >
           <div class="related__image-wrapper">
-            <NuxtImg
-              :src="item.image"
+            <img 
+              :src="withBase(item.image)" 
               :alt="item.title"
               class="related__image"
-              width="300"
-              height="200"
-              format="webp"
               loading="lazy"
             />
           </div>

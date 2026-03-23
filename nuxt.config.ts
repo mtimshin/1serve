@@ -16,6 +16,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-studio'
   ],
+  image: {
+    alias: {
+      '/images/': '/1serve/images/'
+    }
+  },
   ssr: true,
   nitro: {
     prerender: {
