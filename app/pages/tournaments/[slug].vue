@@ -1,7 +1,7 @@
 <script setup>
 const route = useRoute()
-const { data: page } = await useAsyncData(route.path, () =>
-  queryCollection('content').path(route.path).first()
+const { data: page } = await useAsyncData(`tournament-${route.params.slug}`, () =>
+  queryCollection('content').path(`/tournaments/${route.params.slug}`).first()
 )
 
 const { isTocOpen, activeSection, toggleToc, initTocObserver } = useToc()
