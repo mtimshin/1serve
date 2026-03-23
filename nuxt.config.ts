@@ -1,6 +1,5 @@
 export default defineNuxtConfig({
   app: {
-  app: {
     baseURL: '/1serve/',
     head: {
       link: [
@@ -18,10 +17,7 @@ export default defineNuxtConfig({
     'nuxt-studio'
   ],
   image: {
-    provider: 'static',
-    alias: {
-      '/images/': '/1serve/images/'
-    }
+    provider: 'static'
   },
   ssr: true,
   nitro: {
