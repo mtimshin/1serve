@@ -2,15 +2,11 @@
   <div v-if="images && images.length" class="slider" @touchstart="onTouchStart" @touchend="onTouchEnd">
     <div class="slider__container" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
       <div v-for="(image, index) in images" :key="index" class="slider__slide">
-        <NuxtImg 
-          :src="image" 
+        <img 
+          :src="withBase(image)" 
           :alt="`Gallery Image ${index + 1}`" 
           class="slider__image"
           loading="lazy"
-          format="webp"
-          quality="80"
-          width="1200"
-          height="675"
           @click="$emit('image-click', index)"
         />
       </div>

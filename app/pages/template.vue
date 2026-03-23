@@ -111,10 +111,10 @@
       <section class="template-section">
         <h2 class="template-section__title">Карточки игроков (2 ряда, Square)</h2>
         <div class="template-page__player-grid">
-          <TennisPlayerCard name="Novak Djokovic" country="🇷🇸 Сербия" photo="/images/players/player-generic.png" />
-          <TennisPlayerCard name="Carlos Alcaraz" country="🇪🇸 Испания" photo="/images/players/player-generic.png" />
-          <TennisPlayerCard name="Jannik Sinner" country="🇮🇹 Италия" photo="/images/players/player-generic.png" />
-          <TennisPlayerCard name="Daniil Medvedev" country="🇷🇺 Россия" photo="/images/players/player-generic.png" />
+          <TennisPlayerCard name="Novak Djokovic" country="🇷🇸 Сербия" :photo="withBase('/images/players/player-generic.png')" />
+          <TennisPlayerCard name="Carlos Alcaraz" country="🇪🇸 Испания" :photo="withBase('/images/players/player-generic.png')" />
+          <TennisPlayerCard name="Jannik Sinner" country="🇮🇹 Италия" :photo="withBase('/images/players/player-generic.png')" />
+          <TennisPlayerCard name="Daniil Medvedev" country="🇷🇺 Россия" :photo="withBase('/images/players/player-generic.png')" />
         </div>
       </section>
 

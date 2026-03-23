@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: '/1serve/'
+    baseURL: '/1serve/',
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/1serve/favicon.ico' }
+      ]
+    }
   },
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2025-07-15',
