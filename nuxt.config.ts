@@ -11,9 +11,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-studio'
   ],
-  image: {
-    provider: 'static'
-  },
   ssr: true,
   nitro: {
     prerender: {
